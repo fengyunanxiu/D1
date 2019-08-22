@@ -1,23 +1,70 @@
-![title](images/title.png)
+
+## 介绍
+
+​	D1 是g740团队为企业级的基础数据快速生成form table查询页面的Web应用。它支持MySQL、PostgreSQL、SQL Server、Oracle数据库，提供数据表快速查询、导出等功能。
+
+## 问题
+![preview](images\preview.png)
+
+传统方式开发以上页面，需要解决以下问题：
+
+- 需要展示的表是什么
+- 表格展示的字段有哪些
+- 表格展示的字段别名是什么
+- 表格字段的列宽度是多少
+- 表格字段的展示顺序
+- 支持查询字段有哪些
+- 支持查询字段类型是什么
+- 表单字段是否可以精确或模糊查找
+- 表单下拉框的以及默认值、选项值
+- 表单类型的排版以及配置
+- 导出的数据文件格式是什么
+- 哪些字段支持导出
+- 导出的数据字段宽度是多少
+- 导出数据字段的别名是什么
+
+如果有一款工具能快速解决上述问题，那将会大大提升工作的效率和用户体验。这时，D1应运而生。
+
+## 目标
+- 提供数据库快速动态查询
+  在表或视图基础上建立Data Facet生成form 和 table 的默认配置，通过 form table配置信息进行动态查询
+
+- 提供数据库动态查询结果可视化
+  通过 form table配置（可显示的字段、字段别名、字段的位置、字段的列宽度）显示表格内容
+
+- 提供数据库动态查询结果导出
+  通过 form table配置（导出的字段、字段别名、字段导出长度、字段的位置）执行导出
+
+- 提供多数据库类型支持
+  支持MySQL、PostgreSQL、SQL Server、Oracle的可视化，目前仅支持MySQL
+
+- 提供数据库查询、导出动态配置
+  提供 form table setting配置页面由用户自定义查询、导出配置
+
+- 支持多种页面Form元素（文本框，下拉框，日历，数值）
+
+- 下拉框内容支持动态配置
+
+- 支持自动收集下拉框内容
+
+- 支持Form元素默认值配置
+
+- 支持自动收集Form默认值
+
+  ​
 
 
-##介绍
+## 功能
 
-​	D1致力于打造一套基于MySQL、Oracle、Postgresql、SQL Server等数据库数据可视化的解决方案，用户通过添加数据库的连接信息连接（ssh、ssl）到真实的数据访问到相应的表和视图，添加并配置相应的Data Facet key访问相应的数据源，支持数据的异步导出、字典的收集和配置。用户的业务服务访问D1 Core只需要引入D1 Client插件即可获得翻译好SQL语句，根据业务需要进行加工自己发起db查询。
+1、构造基本Form + List/Table + Export页面。Admin Page通过D1 Core Functionality访问Biz Database，可以根据配置好的Data Facet Key对表或视图进行Preview。
 
-###功能
+2、对请求/返回进行再加工以满足高级要求，并将Hosting service的访问压力分摊到各Biz service。对于业务Page来说，API由各业务服务提供，各业务服务的实现依赖D1 Core Functionality将数据访问需求转换成可执行SQL，再由各业务服务自己发起DB查询，各业务服务有机会对执行查询前的内容和执行查询后的内容进行加工以满足特殊需求。
 
-1、构造基本Form + List/Table + Export页面。Admin Page和业务Page都是直接通过D1 Core Functionality访问Biz Database，可以根据配置好的Data Facet Key对表或视图进行Preview。
-
-![basicFunction](images\basicFunction.png)
-
-2、对请求/返回进行再加工以满足高级要求，并将Hosting service的访问压力分摊到各bizservice。对于业务Page来说，API由各业务服务提供，各业务服务的实现依赖D1 Core Functionality将数据访问需求转换成可执行SQL，再由各业务服务自己发起DB查询，各业务服务有机会对执行查询前的内容和执行查询后的内容进行加工以满足特殊需求。
-
-![basicFunction](C:\Users\DAM\Desktop\d1\images\advanceFunction.png)
+![jiagou](J:\开发文档\D1\images\jiagou.png)
 
 
 
-###组织结构
+## 组织结构
 
 ```
 d1
@@ -25,23 +72,23 @@ d1
 ├── d1-client —— 访问d1-core的客户端
 ├── d1-admin-page —— d1的管理页面
 ├── d1-vue-component —— 快速构建form table页面组件
-├── demo -- d1的使用演示
+├── d1-demo -- d1的使用演示
 ```
 
-## 方案
-
-###技术选型
-
-####前端
 
 
+##技术选型
+
+###前端
 
 
 
 
 
 
-####后台
+
+
+###后台
 | 技术            | 版本     | 说明        |
 | ------------- | ------ | --------- |
 | Spring Boot   | 2.0.3  | MVC核心框架   |
@@ -124,7 +171,7 @@ d1
   #数据库用户名
   d1.basic.datasource.user=root
   #数据库密码
-  d1.basic.datasource.password=FnJUC1XsShQp6cZb
+  d1.basic.datasource.password=123456
   #是否使用ssl
   d1.basic.datasource.useSsl=false
   #是否使用ssh
@@ -166,7 +213,7 @@ d1
    <dependency>
        <groupId>ai.sparklabinc</groupId>
        <artifactId>d1-client</artifactId>
-       <version>0.0.1-SNAPSHOT</version>
+       <version>0.0.1-</version>
    </dependency>
    ```
 
@@ -209,7 +256,15 @@ d1
 
 ###相关截图
 
+![demo1](J:\开发文档\D1\images\demo1.png)
 
+![demo2](J:\开发文档\D1\images\demo2.png)
+
+![demo3](J:\开发文档\D1\images\demo3.png)
+
+![demo4](J:\开发文档\D1\images\demo4.png)
+
+![demo5](J:\开发文档\D1\images\demo5.png)
 
 
 
@@ -227,8 +282,6 @@ d1
 1、支持更多的数据库（Oracle、Postgresql、SQL Server、DB2），目前仅支持MySQL。
 
 2、支持SSL连接、字典的收集与配置功能。
-
-
 
 
 
