@@ -4,7 +4,7 @@
 ​	D1 是g740团队为企业级的基础数据快速生成form table查询页面的Web应用。它支持MySQL、PostgreSQL、SQL Server、Oracle数据库，提供数据表快速查询、导出等功能。
 
 ## 问题
-![preview](images\preview.png)
+![preview](https://raw.githubusercontent.com/g740/D1/master/images/preview.png)
 
 传统方式开发以上页面，需要解决以下问题：
 
@@ -60,7 +60,7 @@
 
 2、对请求/返回进行再加工以满足高级要求，并将Hosting service的访问压力分摊到各Biz service。对于业务Page来说，API由各业务服务提供，各业务服务的实现依赖D1 Core Functionality将数据访问需求转换成可执行SQL，再由各业务服务自己发起DB查询，各业务服务有机会对执行查询前的内容和执行查询后的内容进行加工以满足特殊需求。
 
-![jiagou](J:\开发文档\D1\images\jiagou.png)
+![jiagou](https://raw.githubusercontent.com/g740/D1/master/images/jiagou.png)
 
 
 
@@ -149,7 +149,7 @@ d1
 
   ```
   spring.application.name=d1-core
-  server.port= 8080
+  server.port= 7400
   ```
 
   ​
@@ -198,12 +198,12 @@ d1
   ```
   运行`D1CoreApplication.java`  启动d1-core开始建表
 
-  ![coreStart](images\coreStart.png)
+  ![coreStart](https://raw.githubusercontent.com/g740/D1/master/images/coreStart.png)
 
 
-  浏览器输入：http://localhost:8080/swagger-ui.html#访问swagger页面
+  浏览器输入：http://localhost:7400/swagger-ui.html#访问swagger页面
 
-  ![d1CoreSwagger](C:\Users\DAM\Desktop\d1\images\d1CoreSwagger.png)
+  ![d1CoreSwagger](https://raw.githubusercontent.com/g740/D1/master/images/d1CoreSwagger.png)
 
 
 
@@ -256,15 +256,15 @@ d1
 
 ###相关截图
 
-![demo1](J:\开发文档\D1\images\demo1.png)
+![demo1](https://raw.githubusercontent.com/g740/D1/master/images/demo1.png)
 
-![demo2](J:\开发文档\D1\images\demo2.png)
+![demo2](https://raw.githubusercontent.com/g740/D1/master/images/demo2.png)
 
-![demo3](J:\开发文档\D1\images\demo3.png)
+![demo3](https://raw.githubusercontent.com/g740/D1/master/images/demo3.png)
 
-![demo4](J:\开发文档\D1\images\demo4.png)
+![demo4](https://raw.githubusercontent.com/g740/D1/master/images/demo4.png)
 
-![demo5](J:\开发文档\D1\images\demo5.png)
+![demo5](https://raw.githubusercontent.com/g740/D1/master/images/demo5.png)
 
 
 
