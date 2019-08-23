@@ -1,7 +1,7 @@
 
 ## 介绍
 
-​	D1 是g740团队为企业级的基础数据快速生成form table查询页面的Web应用。它支持MySQL、PostgreSQL、SQL Server、Oracle数据库，提供数据表快速查询、导出等功能。
+​	企业级应用数据可视化方面的基本需求是用Form （查询条件） + Toolbar （增删改导出） + Table （分页） 三大件呈现数据，这个需求看起来容易，但真要实施，费时费力。D1是g740团队为实现这个需求开发的一个快速数据可视化工具包。经过多个企业级应用项目实践，生产部署D1之后，可以10分钟内生成和部署新的数据可视化页面。
 
 ## 问题
 ![preview](https://raw.githubusercontent.com/g740/D1/master/images/preview.png)
@@ -51,7 +51,7 @@
 
 - 支持自动收集Form默认值
 
-  ​
+  
 
 
 ## 功能
@@ -74,8 +74,11 @@ d1
 ├── d1-vue-component —— 快速构建form table页面组件
 ├── d1-demo -- d1的使用演示
 ```
-
-
+源码地址：
+d1-core：https://github.com/g740/d1-core.git
+d1-client：https://github.com/g740/d1-client.git
+d1-admin-page：https://github.com/g740/d1-admin-page.git
+d1-demo：https://github.com/g740/d1-demo.git
 
 ## 技术选型
 
@@ -109,9 +112,9 @@ d1
 
 #### 开发环境
 
-| 工具   | 版本   |
+| 工具 | 版本 |
 | ---- | ---- |
-| vue  | 2.3  |
+| Vue  | 2.3  |
 
 
 
@@ -126,20 +129,22 @@ d1
 ### 后台
 #### 开发环境
 
-| 工具              | 版本          |
+| 工具            | 版本        |
 | --------------- | ----------- |
-| jdk             | 1.8+        |
-| mysql           | 5.7         |
-| oracle 11g      | 11.2.0.1.0  |
-| sql server 2017 | 14.0.3048.4 |
-| postgresql      | 9.4.23      |
+| JDK             | 1.8+        |
+| MySQL           | 5.7         |
+| Oracle 11g      | 11.2.0.1.0  |
+| SQL Server 2017 | 14.0.3048.4 |
+| PostgreSQL      | 9.4.23      |
 
 #### 启动
 
 - 克隆代码到本地
 
   ```
-  https://github.com/g740/d1.git
+  https://github.com/g740/d1-core.git
+  https://github.com/g740/d1-client.git
+  https://github.com/g740/d1-demo.git
   ```
 
 - 推荐使用idea，使用idea导入d1 maven项目
@@ -153,7 +158,7 @@ d1
   server.port= 7400
   ```
 
-  ​
+  
 
   临时文件的路径
 
@@ -161,7 +166,7 @@ d1
   file.temp.path=D:/dirTmp
   ```
 
-  d1-core基础数据库支持（目前仅支持MySQL），不配置默认使用sqlite，docker实例重启会丢失，最好配置远程数据库
+  d1-core基础数据库支持（目前仅支持MySQL）
 
   ```
   ############  MYSQL   #########
@@ -208,13 +213,13 @@ d1
 
 
 
- - 展开demo，在`pom.xml` 文件中添加d1-client依赖包
+ - 展开d1-demo，在`pom.xml` 文件中添加d1-client依赖包
 
    ```
    <dependency>
-       <groupId>ai.sparklabinc</groupId>
+       <groupId>io.g740</groupId>
        <artifactId>d1-client</artifactId>
-       <version>0.0.1-</version>
+       <version>1.0.0</version>
    </dependency>
    ```
 
