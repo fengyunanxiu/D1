@@ -74,11 +74,16 @@ d1
 ├── d1-vue-component —— 快速构建form table页面组件
 ├── d1-demo -- d1的使用演示
 ```
-源码地址：
-d1-core：https://github.com/g740/d1-core.git
-d1-client：https://github.com/g740/d1-client.git
-d1-admin-page：https://github.com/g740/d1-admin-page.git
-d1-demo：https://github.com/g740/d1-demo.git
+
+|模块|源码地址|
+| ------------- | ----------------------------------------- |
+| d1-core | https://github.com/g740/d1-core.git |
+| d1-client | https://github.com/g740/d1-client.git |
+| d1-admin-page | https://github.com/g740/d1-admin-page.git |
+| d1-demo | https://github.com/g740/d1-demo.git |
+
+
+
 
 ## 技术选型
 
@@ -93,15 +98,15 @@ d1-demo：https://github.com/g740/d1-demo.git
 
 ### 后台
 
-| 技术            | 版本     | 说明        |
-| ------------- | ------ | --------- |
-| Spring Boot   | 2.0.3  | MVC核心框架   |
-| Fastjson      | 1.2.30 | JSON处理    |
-| Swagger       | 2.7.0  | Api文档框架   |
-| Apache Poi    | 3.9    | excel框架   |
-| Tomcat jdbc   | 8.5.23 | 数据库连接池    |
-| Jsch          | 0.1.54 | ssh连接框架   |
-| eureka-client | 2.0.3  | eureka客户端 |
+| 技术          | 版本   | 说明         |
+| ------------- | ------ | ------------ |
+| Spring Boot   | 2.0.3  | MVC核心框架  |
+| Fastjson      | 1.2.30 | JSON处理     |
+| Swagger       | 2.7.0  | Api文档框架  |
+| Apache Poi    | 3.9    | excel框架    |
+| Tomcat jdbc   | 8.5.23 | 数据库连接池 |
+| Jsch          | 0.1.54 | ssh连接框架  |
+| Eureka-client | 2.0.3  | eureka客户端 |
 
 
 
@@ -173,11 +178,11 @@ d1-demo：https://github.com/g740/d1-demo.git
   #数据库类型
   d1.basic.datasource.type=mysql
   #具体连接url，带schema或database
-  d1.basic.datasource.url=jdbc:mysql://192.168.199.231:3306/d1_core?useSSL=false
+  d1.basic.datasource.url=jdbc:mysql://ip地址:3306/d1_core?useSSL=false
   #数据库用户名
-  d1.basic.datasource.user=root
+  d1.basic.datasource.user=用户名
   #数据库密码
-  d1.basic.datasource.password=123456
+  d1.basic.datasource.password=密码
   #是否使用ssl
   d1.basic.datasource.useSsl=false
   #是否使用ssh
@@ -200,7 +205,7 @@ d1-demo：https://github.com/g740/d1-demo.git
   #ssh秘钥文件
   d1.basic.datasource.sshKeyFile=src/main/bin/ssh-key-file/id_rsa
   #ssh口令
-  d1.basic.datasource.sshPassPhrase=123456
+  d1.basic.datasource.sshPassPhrase=密码口令
   ```
   运行`D1CoreApplication.java`  启动d1-core开始建表
 
@@ -238,7 +243,7 @@ d1-demo：https://github.com/g740/d1-demo.git
 
    ```
    #d1-core url
-   d1-core-service.url=http://localhost:8080
+   d1-core-service.url=http://localhost:7400
    ```
 
    方式二：调用的时候传d1-core的serviceId
